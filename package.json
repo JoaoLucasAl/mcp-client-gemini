@@ -8,12 +8,11 @@
     "build": "tsc"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "author": "João Lucas Alberto Muniz",
+  "license": "MIT",
+  "description": " Um cliente web para interação com o Google Gemini 2.0 Flash integrado ao Model Context Protocol (MCP), permitindo o uso de ferramentas externas através de servidores MCP ",
   "dependencies": {
     "@google/genai": "^0.14.0",
-    "@google/generative-ai": "^0.24.1",
     "@modelcontextprotocol/sdk": "^1.11.1",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
