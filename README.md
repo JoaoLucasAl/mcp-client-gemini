@@ -128,9 +128,9 @@ O servidor estará disponível em `http://localhost:3000`
 Liste os arquivos no diretório Downloads
 ```
 
-**Consultar informações de pagamento (Efí Pay):**
+**Chamadas nas APIs do Efí Bank:**
 ```
-Consulte o saldo da minha conta Efí Pay
+Consulte o saldo da minha conta Efí
 ```
 
 **Operações com arquivos:**
