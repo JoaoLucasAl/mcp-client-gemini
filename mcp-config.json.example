@@ -1,0 +1,24 @@
+{
+    "mcpServers": {
+        "mcp-server-efi": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "mcp-server-efi",
+                "--sandbox=false",
+                "--client-id=Client_Id_",
+                "--client-secret=Client_",
+                "--certificate=certificate_base64",
+                "--validate-mtls=true"
+            ]
+        },
+        "filesystem": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-filesystem",
+                "caminho\\para\\o\\diretorio",
+            ]
+        }
+    }
+}
