@@ -5,7 +5,8 @@
   "scripts": {
     "start": "ts-node src/index.ts",
     "dev": "ts-node-dev src/server.ts",
-    "build": "tsc"
+    "build": "tsc && npm run build:frontend",
+    "build:frontend": "cd frontend && npm install && npm run build"
   },
   "keywords": [],
   "author": "João Lucas Alberto Muniz",

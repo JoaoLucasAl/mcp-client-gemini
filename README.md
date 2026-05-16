@@ -21,7 +21,7 @@ Este projeto implementa uma interface de chat web que se conecta ao Google Gemin
 ## Tecnologias
 
 - **Backend**: Node.js, Express, TypeScript
-- **Frontend**: HTML5, CSS3, JavaScript
+- **Frontend**: React 18, Vite, CSS3
 - **IA**: Google Gemini 2.0 Flash
 - **Protocolo**: Model Context Protocol (MCP)
 - **Renderização**: Marked.js (Markdown)
@@ -56,6 +56,13 @@ cp mcp-config.json.example mcp-config.json
 ```
 
 Edite o arquivo `mcp-config.json` com suas configurações de servidores MCP.
+
+5. **Instale as dependências do frontend React:**
+```bash
+cd frontend
+npm install
+cd ..
+```
 
 ## Configuração
 
@@ -100,18 +107,43 @@ O arquivo `mcp-config.json` define os servidores MCP disponíveis:
 
 ### Desenvolvimento
 
+Para desenvolver apenas o backend:
 ```bash
 npm run dev
 ```
 
-### Produção
+Para desenvolver o frontend com hot reload:
+```bash
+cd frontend
+npm run dev
+```
 
+Acesse `http://localhost:5173` (o Vite fará proxy para `/chat`).
+
+### Build e Produção
+
+Para fazer build completo (backend + frontend):
 ```bash
 npm run build
+```
+
+Para iniciar em produção:
+```bash
 npm start
 ```
 
 O servidor estará disponível em `http://localhost:3000`
+
+### Desenvolvimento do Frontend
+
+O frontend está em uma estrutura modular com React:
+
+```bash
+cd frontend
+npm run dev      # Inicia servidor de desenvolvimento (hot reload)
+npm run build    # Faz build para produção
+npm run preview  # Visualiza build de produção localmente
+```
 
 ## Como Usar
 
@@ -142,10 +174,22 @@ Leia o conteúdo do arquivo exemplo.txt
 
 ```
 mcp-client-gemini/
-├── public/                 # Interface web
-│   ├── index.html         # Página principal
-│   └── script.js          # JavaScript do frontend
-├── src/                   # Código TypeScript
+├── frontend/               # Frontend React + Vite
+│   ├── src/
+│   │   ├── components/    # Componentes React
+│   │   │   ├── ChatContainer.jsx
+│   │   │   ├── ChatMessages.jsx
+│   │   │   ├── Message.jsx
+│   │   │   ├── LoadingIndicator.jsx
+│   │   │   └── InputArea.jsx
+│   │   ├── App.jsx        # Componente principal
+│   │   ├── main.jsx       # Ponto de entrada
+│   │   └── index.css      # Estilos globais
+│   ├── index.html         # Template HTML
+│   ├── vite.config.js     # Configuração Vite
+│   └── package.json
+├── public/                # Build de saída do frontend (gerado automaticamente)
+├── src/                   # Código TypeScript do backend
 │   ├── server.ts          # Servidor Express principal
 │   ├── config/
 │   │   └── env.ts         # Configurações de ambiente

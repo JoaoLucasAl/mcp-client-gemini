@@ -28,8 +28,6 @@ app.post("/chat", async (req, res) => {
   }
 });
 
-app.use(express.static(path.resolve(__dirname, "../public")));
-
 app.listen(PORT, async () => {
   try {
     toolsWithClients = await connectToMCPServers();
